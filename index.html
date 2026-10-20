@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Call for Presentations: Light the Atlantic | Women in AI Halifax</title>
+<meta name="description" content="Women in AI Halifax and Dalhousie Women in Engineering are seeking speakers for Light the Atlantic: short, bold 6–8 minute insights on AI as we enter 2027. Applications close November 10, 2026.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Call for Presentations: Light the Atlantic">
+<meta property="og:description" content="Share one clear, memorable AI insight in 6–8 minutes. Everyone is welcome. Applications close November 10, 2026.">
+<meta name="theme-color" content="#0B2236">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗼</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Fixed night palette (hero + closing band keep these in both modes) */
+    --night: #0B2236;
+    --night-2: #12334D;
+    --lamp: #F4B841;
+    --lamp-soft: #F8D488;
+    --foam: #E9EFF1;
+    --fog: #9FB3BF;
+    --stripe: #D64933;
+
+    /* Content tokens (light) */
+    --bg: #EEF2F2;
+    --ink: #0B2236;
+    --muted: #4A6273;
+    --rule: #C9D5DA;
+    --mark: #8A5600;
+    --surface: #E2E9EB;
+    --field-line: #7B93A1;
+    --alert: #B3361F;
+    --btn-bg: #0B2236; --btn-ink: #F4B841; --btn-hover: #12334D;
+
+    --display: "Big Shoulders Display", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F2A40;
+      --ink: #E9EFF1;
+      --muted: #A9BCC7;
+      --rule: #24455F;
+      --mark: #F4B841;
+      --surface: #143550;
+      --field-line: #5A7E99;
+      --alert: #FF8A73;
+      --btn-bg: #F4B841; --btn-ink: #0B2236; --btn-hover: #F8D488;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F2A40; --ink: #E9EFF1; --muted: #A9BCC7; --rule: #24455F;
+    --mark: #F4B841; --surface: #143550; --field-line: #5A7E99; --alert: #FF8A73; --btn-bg: #F4B841; --btn-ink: #0B2236; --btn-hover: #F8D488; color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  [hidden] { display: none !important; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); background: var(--night); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--lamp); outline-offset: 3px; border-radius: 2px; }
+
+  .skip { position: absolute; left: -999px; top: 0; background: var(--lamp); color: var(--night); padding: .5rem 1rem; z-index: 20; }
+  .skip:focus { left: 1rem; top: 1rem; }
+
+  .wrap { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+
+  /* ---------- Hero: night over the Atlantic ---------- */
+  .night {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 70% at 82% 100%, #1A4664 0%, transparent 60%),
+      linear-gradient(180deg, #071A2A 0%, var(--night) 55%, var(--night-2) 100%);
+    color: var(--foam);
+    isolation: isolate;
+  }
+  .hosts {
+    position: relative; z-index: 2;
+    padding-block: 1.5rem;
+    font-size: .95rem;
+    color: var(--fog);
+    display: flex; flex-wrap: wrap; gap: .25rem .5rem; align-items: baseline;
+  }
+  .hosts strong { color: var(--foam); font-weight: 700; }
+
+  .scene { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .scene svg { width: 100%; height: 100%; display: block; }
+
+  .beam {
+    transform-origin: 1210px 434px;
+    transform: rotate(9deg);
+    animation: sweep 3.2s cubic-bezier(.2,.7,.2,1) .3s both;
+  }
+  @keyframes sweep {
+    0%   { transform: rotate(-16deg); opacity: 0; }
+    15%  { opacity: 1; }
+    100% { transform: rotate(9deg); opacity: 1; }
+  }
+  .lamp-glow { animation: glow 3.2s ease-out .3s both; }
+  @keyframes glow { from { opacity: 0; } to { opacity: 1; } }
+
+  .hero {
+    position: relative; z-index: 2;
+    padding-block: clamp(3rem, 10vh, 7rem) clamp(9rem, 22vh, 13rem);
+    max-width: 44rem;
+  }
+  .kicker {
+    margin: 0 0 .75rem;
+    font-size: 1.125rem;
+    color: var(--lamp-soft);
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(4rem, 13vw, 9.5rem);
+    line-height: .86;
+    letter-spacing: -.01em;
+    margin: 0 0 1.75rem;
+    text-wrap: balance;
+  }
+  .lede {
+    font-size: clamp(1.15rem, 2.2vw, 1.375rem);
+    line-height: 1.55;
+    max-width: 34em;
+    margin: 0 0 2rem;
+    color: var(--foam);
+  }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+  .apply {
+    display: inline-block;
+    font-family: var(--body); font-weight: 700; font-size: 1.125rem;
+    text-decoration: none;
+    background: var(--lamp); color: var(--night);
+    padding: .9rem 1.6rem;
+    border-radius: 999px;
+    box-shadow: 0 0 0 0 rgba(244,184,65,.0);
+    transition: box-shadow .2s ease, background .2s ease;
+  }
+  .apply:hover { background: var(--lamp-soft); box-shadow: 0 0 28px 4px rgba(244,184,65,.35); }
+  .deadline { margin: 0; color: var(--fog); font-size: 1rem; }
+  .deadline strong { color: var(--foam); }
+
+  /* ---------- Key facts ---------- */
+  .facts {
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  .facts dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .facts div { padding: 1.4rem 1.25rem 1.4rem 0; }
+  .facts div + div { padding-left: 1.25rem; border-left: 1px solid var(--rule); }
+  .facts dt { font-size: .95rem; color: var(--muted); margin-bottom: .2rem; }
+  .facts dd { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.1; }
+
+  /* ---------- Content sections ---------- */
+  main section {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+    gap: 1rem 3rem;
+    padding-block: clamp(2.75rem, 6vw, 4.5rem);
+    border-bottom: 1px solid var(--rule);
+  }
+  main section:last-of-type { border-bottom: 0; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1;
+    margin: .15rem 0 0;
+    text-wrap: balance;
+  }
+  .body { max-width: 40rem; }
+  .body p { margin: 0 0 1.1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .body .big { font-size: clamp(1.25rem, 2.4vw, 1.5rem); line-height: 1.45; }
+
+  .angles {
+    list-style: none; margin: 1.5rem 0 0; padding: 0;
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2rem;
+  }
+  .angles li {
+    position: relative;
+    padding: .9rem 0 .9rem 1.6rem;
+    border-top: 1px solid var(--rule);
+  }
+  .angles li::before {
+    /* a small beam of light as the marker */
+    content: "";
+    position: absolute; left: 0; top: 1.45rem;
+    width: 1rem; height: .5rem;
+    background: var(--mark);
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);
+  }
+
+  .criteria { margin: 1.25rem 0 0; padding-left: 1.25rem; }
+  .criteria li { margin-bottom: .45rem; padding-left: .25rem; }
+  .criteria li::marker { color: var(--mark); }
+
+  /* ---------- Closing band ---------- */
+  .closing {
+    background:
+      radial-gradient(60% 120% at 50% 120%, rgba(244,184,65,.28) 0%, transparent 60%),
+      var(--night);
+    color: var(--foam);
+    text-align: center;
+    padding-block: clamp(4rem, 10vw, 6.5rem);
+  }
+  .closing p.sign {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    line-height: .95;
+    margin: 0 0 2rem;
+  }
+  .closing .actions { justify-content: center; }
+
+  footer {
+    background: var(--night);
+    color: var(--fog);
+    border-top: 1px solid #1E4260;
+    font-size: .95rem;
+    padding-block: 1.75rem;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+  footer a { color: var(--foam); }
+
+
+  .hosts { justify-content: space-between; align-items: center; gap: 1rem 2rem; }
+  .logos { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; }
+  .logos img { height: 56px; width: auto; display: block; }
+  .logo-text { color: var(--foam); font-weight: 700; font-size: .95rem; line-height: 1.2; max-width: 12rem; }
+  .hashtag { color: var(--lamp-soft); font-weight: 700; font-size: .95rem; }
+  .deadline .count { color: var(--lamp-soft); font-variant-numeric: tabular-nums; }
+
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .req { color: var(--mark); font-weight: 700; }
+
+  #lta-form { display: grid; gap: 1.6rem; margin-top: 1.75rem; }
+  .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1.25rem; }
+  .field { display: flex; flex-direction: column; gap: .35rem; margin: 0; padding: 0; border: 0; min-width: 0; }
+  .field label, .field legend { font-weight: 700; font-size: 1rem; padding: 0; }
+  .hint { color: var(--muted); font-size: .95rem; line-height: 1.45; }
+  .field input[type=text], .field input[type=email], .field input[type=url], .field textarea {
+    font: inherit; font-size: 1rem; color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--field-line);
+    border-radius: 6px;
+    padding: .7rem .85rem;
+    width: 100%;
+  }
+  .field textarea { resize: vertical; line-height: 1.5; }
+  .field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--lamp); outline-offset: 1px; border-color: var(--ink); }
+  .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--alert); border-width: 2px; }
+  .choices { display: grid; gap: .55rem; margin: .4rem 0 .5rem; }
+  .choices label, .confirm { display: flex; gap: .65rem; align-items: flex-start; font-weight: 400; line-height: 1.4; cursor: pointer; }
+  .confirm { font-weight: 700; }
+  .choices input, .confirm input { width: 1.15rem; height: 1.15rem; margin-top: .15rem; flex-shrink: 0; accent-color: var(--mark); }
+  #lta-form button.apply { justify-self: start; border: 0; cursor: pointer; background: var(--btn-bg); color: var(--btn-ink); }
+  #lta-form button.apply:hover { background: var(--btn-hover); }
+  #lta-form button.apply[disabled] { opacity: .6; cursor: progress; }
+  .error { color: var(--alert); font-weight: 700; margin: 0; }
+  .note { border-left: 4px solid var(--mark); background: var(--surface); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin-top: 1.5rem; }
+  .note.warn { border-left-color: var(--alert); }
+  @media (max-width: 760px) { .row { grid-template-columns: minmax(0, 1fr); } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    main section { grid-template-columns: minmax(0, 1fr); }
+    .angles { grid-template-columns: minmax(0, 1fr); }
+    .facts dl { grid-template-columns: minmax(0, 1fr); }
+    .facts div, .facts div + div { padding: .9rem 0; border-left: 0; }
+    .facts div + div { border-top: 1px solid var(--rule); }
+    .hero { padding-bottom: 11rem; }
+    .scene { top: auto; height: 300px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .beam, .lamp-glow { animation: none; }
+    .apply { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the call details</a>
+
+<header class="night">
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 1400 640" preserveAspectRatio="xMaxYMax slice">
+      <defs>
+        <linearGradient id="beamFill" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stop-color="#F8D488" stop-opacity=".38"/>
+          <stop offset=".45" stop-color="#F4B841" stop-opacity=".12"/>
+          <stop offset="1" stop-color="#F4B841" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="lampGlow">
+          <stop offset="0" stop-color="#FFE7A8" stop-opacity=".95"/>
+          <stop offset=".25" stop-color="#F4B841" stop-opacity=".45"/>
+          <stop offset="1" stop-color="#F4B841" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0E2C44"/>
+          <stop offset="1" stop-color="#081B2B"/>
+        </linearGradient>
+      </defs>
+
+      <!-- stars -->
+      <g fill="#E9EFF1" opacity=".5">
+        <circle cx="120" cy="70" r="1.2"/><circle cx="310" cy="140" r="1"/><circle cx="520" cy="60" r="1.4"/>
+        <circle cx="690" cy="170" r="1"/><circle cx="860" cy="90" r="1.2"/><circle cx="1010" cy="40" r="1"/>
+        <circle cx="1180" cy="120" r="1.3"/><circle cx="1330" cy="70" r="1"/><circle cx="420" cy="250" r=".9"/>
+        <circle cx="980" cy="230" r=".9"/><circle cx="60" cy="300" r="1"/><circle cx="760" cy="300" r=".8"/>
+      </g>
+
+      <!-- the beam -->
+      <g class="beam">
+        <polygon points="1210,434 -300,330 -300,520" fill="url(#beamFill)"/>
+      </g>
+
+      <!-- sea -->
+      <rect x="0" y="560" width="1400" height="80" fill="url(#sea)"/>
+      <g stroke="#2A5677" stroke-width="1.5" opacity=".7">
+        <line x1="0" y1="575" x2="1400" y2="575"/>
+        <line x1="80" y1="596" x2="1000" y2="596" opacity=".6"/>
+        <line x1="300" y1="616" x2="1400" y2="616" opacity=".4"/>
+      </g>
+      <!-- reflection of the lamp on the water -->
+      <g stroke="#F4B841" stroke-linecap="round" opacity=".35">
+        <line x1="1180" y1="582" x2="1240" y2="582" stroke-width="2"/>
+        <line x1="1165" y1="600" x2="1255" y2="600" stroke-width="1.5"/>
+        <line x1="1190" y1="620" x2="1230" y2="620" stroke-width="1.2"/>
+      </g>
+
+      <!-- headland rocks -->
+      <path d="M1080 562 C1110 540, 1140 548, 1160 538 C1185 528, 1235 530, 1262 540 C1290 550, 1320 548, 1345 562 Z" fill="#06141F"/>
+
+      <!-- lighthouse -->
+      <g>
+        <polygon points="1194,540 1226,540 1219,448 1201,448" fill="#E9EFF1"/>
+        <polygon points="1196.6,510 1223.4,510 1222.2,494 1197.8,494" fill="#D64933"/>
+        <polygon points="1199.2,476 1220.8,476 1220,464 1200,464" fill="#D64933"/>
+        <rect x="1197" y="442" width="26" height="6" fill="#06141F"/>
+        <rect x="1201" y="426" width="18" height="16" fill="#FFE7A8"/>
+        <polygon points="1198,426 1222,426 1210,412" fill="#06141F"/>
+      </g>
+      <circle class="lamp-glow" cx="1210" cy="434" r="70" fill="url(#lampGlow)"/>
+    </svg>
+  </div>
+
+  <div class="wrap">
+    <nav class="hosts" aria-label="Hosts">
+      <div class="logos">
+        <img src="./wai-logo-white.avif" alt="Women in AI" height="56">
+        <!-- Replace this span with the Dal Women in Engineering white logo once you have it:
+             <img src="./dal-wie-logo-white.png" alt="Dalhousie Women in Engineering" height="40"> -->
+        <span class="logo-text">Dalhousie Women in Engineering</span>
+      </div>
+      <span class="hashtag">#LightTheAtlantic</span>
+    </nav>
+
+    <div class="hero">
+      <p class="kicker">Call for presentations</p>
+      <h1>Light the Atlantic</h1>
+      <p class="lede">Women in AI Halifax is seeking speakers for Light the Atlantic, our year-end flagship event this December.</p>
+      <div class="actions">
+        <a class="apply" href="#apply">Apply to speak</a>
+        <p class="deadline" data-countdown>Applications close <strong>November 10, 2026</strong></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="wrap">
+    <dl>
+      <div><dt>Applications close</dt><dd>November 10, 2026</dd></div>
+      <div><dt>Talk length</dt><dd>6–8 minutes</dd></div>
+      <div><dt>Event</dt><dd>November 30, 2026</dd></div>
+      <!-- Add venue/time here when confirmed, e.g.:
+      <div><dt>Where</dt><dd>Venue name, Halifax</dd></div> -->
+    </dl>
+  </div>
+</div>
+
+<main id="content">
+  <div class="wrap">
+
+    <section aria-labelledby="h-insight">
+      <h2 id="h-insight">One bold insight</h2>
+      <div class="body">
+        <p class="big">Speakers will share short, bold insights designed to challenge, inspire, and spark conversation as we close out 2026 and look ahead to a new year of AI progress.</p>
+        <p>We’re looking for one clear, memorable insight, something that can shift how people think as we enter 2027. This could be:</p>
+        <ul class="angles">
+          <li>A fresh angle or unpopular opinion</li>
+          <li>Something you built, tested, learned, or changed your mind about</li>
+          <li>An AI development people are overlooking</li>
+          <li>A challenge or opportunity for Atlantic Canada</li>
+          <li>What AI is changing in your profession or community</li>
+          <li>A future we should intentionally create or intentionally avoid</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-format">
+      <h2 id="h-format">The format</h2>
+      <div class="body">
+        <p>Selected speakers will deliver a focused 6–8 minute presentation built around one central message.</p>
+        <p>Talks should be accessible to both technical and non-technical audiences and grounded in real experience, evidence, research, or a specific example.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-who">
+      <h2 id="h-who">Who should apply</h2>
+      <div class="body">
+        <p class="big">Everyone is welcome. If you have a bold insight, we want to give you the stage.</p>
+        <p>Researchers, professionals, founders, students, builders, educators, public servants, creators, and community members are all encouraged to apply. Previous speaking experience is not required.</p>
+        <p>Women, gender-diverse people, emerging speakers, and voices underrepresented in AI conversations are especially encouraged to apply.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-assess">
+      <h2 id="h-assess">How proposals are assessed</h2>
+      <div class="body">
+        <p>Proposals will be assessed on:</p>
+        <ul class="criteria">
+          <li>Clarity and strength of the central insight</li>
+          <li>Originality</li>
+          <li>Grounding in evidence or experience</li>
+          <li>Relevance to AI and Atlantic Canada</li>
+          <li>Accessibility</li>
+          <li>Contribution to a diverse program</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="apply" aria-labelledby="h-apply">
+      <h2 id="h-apply">Apply to speak</h2>
+      <div class="body">
+        <p id="form-intro">It takes about 10 minutes. Fields marked <span class="req" aria-hidden="true">*</span><span class="sr">with an asterisk</span> are required.</p>
+
+        <div id="closed-note" class="note" hidden>
+          <p><strong>Applications are now closed.</strong> Thank you to everyone who applied. Selected speakers will hear from us by email.</p>
+        </div>
+
+        <div id="thanks-note" class="note" hidden tabindex="-1">
+          <p><strong>Your application is in.</strong> Thank you for raising your hand. We’ll be in touch by email after applications close on November 10.</p>
+        </div>
+
+        <div id="preview-note" class="note warn" hidden>
+          <p><strong>Preview only.</strong> This form isn’t connected to the Google Form yet, so nothing was sent.</p>
+        </div>
+
+        <form id="lta-form" method="POST" target="lta-sink" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" data-field="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" data-field="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-role">Role and organization <span class="req" aria-hidden="true">*</span></label>
+            <span class="hint" id="h-role">Or what you do, such as student, founder, educator, or community organizer.</span>
+            <input id="f-role" data-field="role" type="text" aria-describedby="h-role" required>
+          </div>
+
+          <div class="field">
+            <label for="f-link">LinkedIn or website</label>
+            <input id="f-link" data-field="link" type="url" inputmode="url" placeholder="https://">
+          </div>
+
+          <div class="field">
+            <label for="f-title">Talk title <span class="req" aria-hidden="true">*</span></label>
+            <span class="hint" id="h-title">A working title is fine.</span>
+            <input id="f-title" data-field="title" type="text" aria-describedby="h-title" required>
+          </div>
+
+          <div class="field">
+            <label for="f-insight">Your central insight <span class="req" aria-hidden="true">*</span></label>
+            <span class="hint" id="h-insight">In one or two sentences: what should people think differently about after your talk?</span>
+            <textarea id="f-insight" data-field="insight" rows="3" aria-describedby="h-insight" required></textarea>
+          </div>
+
+          <fieldset class="field">
+            <legend>Which of these best describes your insight?</legend>
+            <span class="hint">Choose any that apply.</span>
+            <div class="choices">
+              <label><input type="checkbox" data-field="angle" value="A fresh angle or unpopular opinion"> A fresh angle or unpopular opinion</label>
+              <label><input type="checkbox" data-field="angle" value="Something you built, tested, learned, or changed your mind about"> Something you built, tested, learned, or changed your mind about</label>
+              <label><input type="checkbox" data-field="angle" value="An AI development people are overlooking"> An AI development people are overlooking</label>
+              <label><input type="checkbox" data-field="angle" value="A challenge or opportunity for Atlantic Canada"> A challenge or opportunity for Atlantic Canada</label>
+              <label><input type="checkbox" data-field="angle" value="What AI is changing in your profession or community"> What AI is changing in your profession or community</label>
+              <label><input type="checkbox" data-field="angle" value="A future we should intentionally create or intentionally avoid"> A future we should intentionally create or intentionally avoid</label>
+              <label><input type="checkbox" data-field="angle" value="__other_option__" id="f-angle-other-box"> Something else</label>
+            </div>
+            <input type="text" data-field="angleOther" aria-label="Describe your other angle" placeholder="If something else, describe it briefly">
+          </fieldset>
+
+          <div class="field">
+            <label for="f-develop">How will you make the case in 6–8 minutes? <span class="req" aria-hidden="true">*</span></label>
+            <span class="hint" id="h-develop">What experience, evidence, research, or specific example grounds your insight, and how will you make it land for both technical and non-technical listeners?</span>
+            <textarea id="f-develop" data-field="develop" rows="6" aria-describedby="h-develop" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="f-atlantic">Why does it matter here?</label>
+            <span class="hint" id="h-atlantic">How does your insight connect to Atlantic Canada, its people, or its work?</span>
+            <textarea id="f-atlantic" data-field="atlantic" rows="3" aria-describedby="h-atlantic"></textarea>
+          </div>
+
+          <fieldset class="field">
+            <legend>Your speaking experience</legend>
+            <span class="hint">There’s no wrong answer. Previous speaking experience is not required.</span>
+            <div class="choices">
+              <label><input type="radio" data-field="experience" value="This would be my first talk"> This would be my first talk</label>
+              <label><input type="radio" data-field="experience" value="I’ve given a few talks"> I’ve given a few talks</label>
+              <label><input type="radio" data-field="experience" value="I speak regularly"> I speak regularly</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-notes">Anything else we should know?</label>
+            <span class="hint" id="h-notes">Including any accessibility needs for presenting.</span>
+            <textarea id="f-notes" data-field="notes" rows="3" aria-describedby="h-notes"></textarea>
+          </div>
+
+          <div class="field">
+            <label class="confirm"><input type="checkbox" data-field="availability" value="Yes, I’m available to present at Light the Atlantic on November 30, 2026" required> <span>I’m available to present at Light the Atlantic on November 30, 2026 <span class="req" aria-hidden="true">*</span></span></label>
+          </div>
+
+          <p id="form-error" class="error" role="alert" hidden></p>
+          <button type="submit" class="apply">Submit application</button>
+        </form>
+        <iframe name="lta-sink" id="lta-sink" title="Form submission" hidden></iframe>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<section class="closing" aria-label="Apply">
+  <div class="wrap">
+    <p class="sign">Let’s light the Atlantic.</p>
+    <div class="actions">
+      <a class="apply" href="#apply">Apply to speak</a>
+      <p class="deadline" data-countdown>Applications close <strong>November 10, 2026</strong></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Women in AI Halifax with Dalhousie Women in Engineering</span>
+    <!-- Add a contact email or social links here, e.g. <a href="mailto:...">Questions? Email us</a> -->
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIGURATION: the only part you need to edit.
+   See README.md for how to find these values in your Google Form.
+   ============================================================ */
+const CONFIG = {
+  // Google Form ID: the long string in .../forms/d/e/<THIS_PART>/viewform
+  formId: "1FAIpQLSfbuRXdS2vlFErpq7hC5qFK7qpRc4Na3q5k02xhzX24c3hZXQ",
+  // Deadline: end of day November 10, 2026, Atlantic Standard Time
+  deadline: "2026-11-10T23:59:59-04:00",
+  // Entry IDs from the Google Form's pre-filled link (numbers only)
+  entries: {
+    name:         "1185598105",
+    email:        "2101434947",
+    role:         "188088291",
+    link:         "576401086",
+    title:        "1138890609",
+    insight:      "699453460",
+    angle:        "1619746115",   // checkbox question; "Something else" uses the Form's Other option
+    develop:      "2052454258",
+    atlantic:     "260954320",
+    experience:   "7172479",
+    notes:        "1204548179",
+    availability: "684037801"
+  }
+};
+/* ============================================================ */
+
+(function () {
+  const form = document.getElementById("lta-form");
+  const sink = document.getElementById("lta-sink");
+  const errorBox = document.getElementById("form-error");
+  const connected = !/YOUR_FORM_ID/.test(CONFIG.formId) && !Object.values(CONFIG.entries).some(v => /^0+\d$|^0{4,}/.test(v));
+  const deadline = new Date(CONFIG.deadline).getTime();
+
+  // Wire up Google Form field names from the config
+  form.action = "https://docs.google.com/forms/d/e/" + CONFIG.formId + "/formResponse";
+  form.querySelectorAll("[data-field]").forEach(el => {
+    const key = el.dataset.field;
+    if (key === "angleOther") { el.name = "entry." + CONFIG.entries.angle + ".other_option_response"; return; }
+    if (CONFIG.entries[key]) el.name = "entry." + CONFIG.entries[key];
+  });
+
+  // Typing in "Something else" ticks its box
+  const otherText = form.querySelector('[data-field="angleOther"]');
+  const otherBox = document.getElementById("f-angle-other-box");
+  otherText.addEventListener("input", () => { otherBox.checked = otherText.value.trim() !== ""; });
+
+  // Countdown and automatic close
+  const counters = document.querySelectorAll("[data-countdown]");
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+  function tick() {
+    const left = deadline - Date.now();
+    if (left <= 0) { closeApplications(); return false; }
+    const d = Math.floor(left / 864e5), h = Math.floor(left % 864e5 / 36e5), m = Math.floor(left % 36e5 / 6e4);
+    const when = d > 0 ? d + (d === 1 ? " day, " : " days, ") + pad(h) + " h " + pad(m) + " min"
+                       : pad(h) + " h " + pad(m) + " min";
+    counters.forEach(c => { c.innerHTML = 'Applications close <strong>November 10, 2026</strong><br><span class="count">' + when + ' left</span>'; });
+    return true;
+  }
+  function closeApplications() {
+    form.hidden = true;
+    document.getElementById("form-intro").hidden = true;
+    document.getElementById("closed-note").hidden = false;
+    counters.forEach(c => { c.innerHTML = "<strong>Applications are now closed.</strong> Thank you!"; });
+    document.querySelectorAll('a.apply[href="#apply"]').forEach(a => { a.textContent = "Applications closed"; });
+  }
+  if (tick()) { const t = setInterval(() => { if (!tick()) clearInterval(t); }, 30000); }
+
+  // Validation and submission
+  let submitted = false;
+  form.addEventListener("submit", e => {
+    errorBox.hidden = true;
+    let firstBad = null;
+    form.querySelectorAll("[required]").forEach(el => {
+      const bad = el.type === "checkbox" ? !el.checked : !el.value.trim() || (el.type === "email" && !el.checkValidity());
+      el.setAttribute("aria-invalid", bad ? "true" : "false");
+      if (bad && !firstBad) firstBad = el;
+    });
+    if (firstBad) {
+      e.preventDefault();
+      errorBox.textContent = "Please fill in the required fields marked with an asterisk.";
+      errorBox.hidden = false;
+      firstBad.focus();
+      return;
+    }
+    if (!connected) {
+      e.preventDefault();
+      document.getElementById("preview-note").hidden = false;
+      return;
+    }
+    if (Date.now() > deadline) { e.preventDefault(); closeApplications(); return; }
+    submitted = true;
+    form.querySelector("button").disabled = true;
+  });
+  sink.addEventListener("load", () => {
+    if (!submitted) return;
+    form.hidden = true;
+    document.getElementById("form-intro").hidden = true;
+    const thanks = document.getElementById("thanks-note");
+    thanks.hidden = false;
+    thanks.focus();
+  });
+})();
+</script>
+</body>
+</html>
